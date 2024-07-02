@@ -1,17 +1,15 @@
 import { Router } from "express";
-import PalabrasController from "../controllers/PalabrasController.js";
+import LecturaController from "../controllers/LecturaController.js";
 
 const routes = Router()
 
-const palabrasController = new PalabrasController()
+const lecturaController = new LecturaController()
 
-routes.post("/", palabrasController.creataPalabra)
+routes.post("/", lecturaController.createLectura)
 
-routes.get("/", palabrasController.getPalabras)
+routes.get("/", lecturaController.getLecturas)
 
-routes.delete("/:palabra", palabrasController.deletePalabra)
-
-routes.get("/:cantidad", palabrasController.getCantidadPalabras)
+routes.get("/:id", lecturaController.getLecturasPorSonda)
 
 
 
